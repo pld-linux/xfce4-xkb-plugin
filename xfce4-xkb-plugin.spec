@@ -2,7 +2,7 @@ Summary:	Displays and switched the current keyboard layout
 Summary(pl):	Wy¶wietlanie i prze³±czanie bie¿±cego uk³adu klawiatury
 Name:		xfce4-xkb-plugin
 Version:	0.3.2
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.gz
