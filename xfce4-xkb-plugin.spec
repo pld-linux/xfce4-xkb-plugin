@@ -1,5 +1,5 @@
 Summary:	Displays and switched the current keyboard layout
-Summary(pl):	Wy¶wietla i prze³±cza bie¿±cy uk³ad klawiatury
+Summary(pl):	Wy¶wietlanie i prze³±czanie bie¿±cego uk³adu klawiatury
 Name:		xfce4-xkb-plugin
 Version:	0.3.2
 Release:	1
@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.gz
 # Source0-md5:	b233819d685ab3b7f4a47c2da9fb6936
 URL:		http://xfce-goodies.berlios.de/
+BuildRequires:	automake
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-panel-devel >= 4.0
 Requires:	xfce4-panel >= 4.0
@@ -19,8 +20,8 @@ new version can display the layout as text label and also as an image
 of the corresponding country's flag.
 
 %description -l pl
-Wtyczka wy¶wietla i prze³±cza bie¿±cy uk³ad klawiatury. Nowa wersja
-portafi wy¶wietlaæ uk³ad jako etykietkê tekstow± albo jako grafikê
+Ta wtyczka wy¶wietla i prze³±cza bie¿±cy uk³ad klawiatury. Nowa wersja
+potrafi wy¶wietlaæ uk³ad jako etykietkê tekstow± albo jako grafikê
 przedstawiaj±c± flagê narodow±.
 
 %prep
@@ -48,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README
 %attr(755,root,root) %{_libdir}/xfce4/panel-plugins/*.so
-%{_datadir}/xfce4/xkb/flags/*
+%{_datadir}/xfce4/xkb
