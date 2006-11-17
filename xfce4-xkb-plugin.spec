@@ -1,17 +1,19 @@
 Summary:	Displays and switched the current keyboard layout
 Summary(pl):	Wy¶wietlanie i prze³±czanie bie¿±cego uk³adu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.3.2
-Release:	2
+Version:	0.4.1
+Release:	1
 License:	BSD-like
 Group:		X11/Applications
-Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.gz
-# Source0-md5:	b233819d685ab3b7f4a47c2da9fb6936
-URL:		http://xfce-goodies.berlios.de/
+Source0:	http://goodies.xfce.org/releases/xfce4-xkb-plugin/%{name}-%{version}.tar.gz
+# Source0-md5:	b74327c8b61898d7ecf6e431fd209d34
+URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	xfce4-panel-devel >= 4.0
-Requires:	xfce4-panel >= 4.0
+BuildRequires:	xfce4-dev-tools >= 4.3.90.1
+BuildRequires:	xfce4-panel-devel >= 4.3.90.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,7 +30,11 @@ przedstawiaj±c± flagê narodow±.
 %setup -q
 
 %build
-cp -f %{_datadir}/automake/config.sub .
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-static
 
@@ -42,11 +48,14 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xfce4/panel-plugins/*.la
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/*.so
+%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-xkb-plugin
+%{_datadir}/xfce4/panel-plugins/xkb-plugin.desktop
 %{_datadir}/xfce4/xkb
