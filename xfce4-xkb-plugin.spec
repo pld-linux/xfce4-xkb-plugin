@@ -1,19 +1,19 @@
 Summary:	Displays and switched the current keyboard layout
 Summary(pl):	Wy¶wietlanie i prze³±czanie bie¿±cego uk³adu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.4.1
+Version:	0.4.3
 Release:	1
 License:	BSD-like
 Group:		X11/Applications
-Source0:	http://goodies.xfce.org/releases/xfce4-xkb-plugin/%{name}-%{version}.tar.gz
-# Source0-md5:	b74327c8b61898d7ecf6e431fd209d34
+Source0:	http://goodies.xfce.org/releases/xfce4-xkb-plugin/%{name}-%{version}.tar.bz2
+# Source0-md5:	e0375158339672f49c9e48a8b4669592
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	xfce4-dev-tools >= 4.3.90.1
-BuildRequires:	xfce4-panel-devel >= 4.3.90.1
+BuildRequires:	xfce4-dev-tools >= 4.4.0
+BuildRequires:	xfce4-panel-devel >= 4.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
