@@ -1,5 +1,5 @@
 Summary:	Displays and switched the current keyboard layout
-Summary(pl):	Wy¶wietlanie i prze³±czanie bie¿±cego uk³adu klawiatury
+Summary(pl.UTF-8):   WyÅ›wietlanie i przeÅ‚Ä…czanie bieÅ¼Ä…cego ukÅ‚adu klawiatury
 Name:		xfce4-xkb-plugin
 Version:	0.4.3
 Release:	1
@@ -21,10 +21,10 @@ This plugin displays and switched the current keyboard layouts. The
 new version can display the layout as text label and also as an image
 of the corresponding country's flag.
 
-%description -l pl
-Ta wtyczka wy¶wietla i prze³±cza bie¿±cy uk³ad klawiatury. Nowa wersja
-potrafi wy¶wietlaæ uk³ad jako etykietkê tekstow± albo jako grafikê
-przedstawiaj±c± flagê narodow±.
+%description -l pl.UTF-8
+Ta wtyczka wyÅ›wietla i przeÅ‚Ä…cza bieÅ¼Ä…cy ukÅ‚ad klawiatury. Nowa wersja
+potrafi wyÅ›wietlaÄ‡ ukÅ‚ad jako etykietkÄ™ tekstowÄ… albo jako grafikÄ™
+przedstawiajÄ…cÄ… flagÄ™ narodowÄ….
 
 %prep
 %setup -q
