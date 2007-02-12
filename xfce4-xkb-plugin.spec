@@ -1,5 +1,5 @@
 Summary:	Displays and switched the current keyboard layout
-Summary(pl.UTF-8):   Wyświetlanie i przełączanie bieżącego układu klawiatury
+Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
 Version:	0.4.3
 Release:	1
