@@ -10,6 +10,7 @@ Source0:	http://goodies.xfce.org/releases/xfce4-xkb-plugin/%{name}-%{version}.ta
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.4.0
