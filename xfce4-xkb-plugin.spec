@@ -2,17 +2,18 @@ Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
 Version:	0.5.3.3
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		X11/Applications
 Source0:	http://goodies.xfce.org/releases/xfce4-xkb-plugin/%{name}-%{version}.tar.gz
 # Source0-md5:	b233cc9de1cbace075eaf6e2c9a8e685
+Patch0:		%{name}-xklavier-api.patch
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	intltool
 BuildRequires:	libtool
-BuildRequires:	libxklavier-devel >= 3.2
+BuildRequires:	libxklavier-devel >= 4.0
 BuildRequires:	librsvg-devel >= 2.18.0
 BuildRequires:	libwnck-devel >= 2.12.0
 BuildRequires:	pkgconfig
@@ -33,6 +34,7 @@ przedstawiającą flagę narodową.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__intltoolize}
