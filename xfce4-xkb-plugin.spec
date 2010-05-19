@@ -12,11 +12,12 @@ Patch1:		%{name}-libxklavier5.patch
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
+BuildRequires:	gettext-devel
 BuildRequires:	intltool
-BuildRequires:	libtool
-BuildRequires:	libxklavier-devel >= 4.0
 BuildRequires:	librsvg-devel >= 2.18.0
+BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.12.0
+BuildRequires:	libxklavier-devel >= 4.0
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.4.0
 BuildRequires:	xfce4-panel-devel >= 4.4.0
