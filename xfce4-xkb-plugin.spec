@@ -1,3 +1,5 @@
+# TODO
+# - memleak: https://bugzilla.xfce.org/show_bug.cgi?id=7363
 Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
