@@ -10,12 +10,8 @@ Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.5/%{name}-%{version}.tar.bz2
 # Source0-md5:	b31144bd50875ec73f0b3101456c97fd
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake >= 1:1.8
 BuildRequires:	gettext-devel
-BuildRequires:	intltool
 BuildRequires:	librsvg-devel >= 2.18.0
-BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.12.0
 BuildRequires:	libxklavier-devel >= 4.0
 BuildRequires:	pkgconfig
@@ -38,12 +34,6 @@ przedstawiającą flagę narodową.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure \
 	--disable-static
 
