@@ -1,23 +1,22 @@
-# TODO
-# - memleak: https://bugzilla.xfce.org/show_bug.cgi?id=7363
 Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.5.4.3
-Release:	2
+Version:	0.7.0
+Release:	1
 License:	BSD-like
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	b31144bd50875ec73f0b3101456c97fd
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	7fbc3d8c84d6662d819dd1803f0fee34
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+BuildRequires:	garcon-devel
 BuildRequires:	gettext-devel
 BuildRequires:	librsvg-devel >= 2.18.0
 BuildRequires:	libwnck-devel >= 2.12.0
 BuildRequires:	libxklavier-devel >= 4.0
 BuildRequires:	pkgconfig
-BuildRequires:	xfce4-dev-tools >= 4.4.0
-BuildRequires:	xfce4-panel-devel >= 4.4.0
-Requires:	xfce4-panel >= 4.4.0
+BuildRequires:	xfce4-dev-tools >= 4.11.0
+BuildRequires:	xfce4-panel-devel >= 4.11.0
+Requires:	xfce4-panel >= 4.11.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
