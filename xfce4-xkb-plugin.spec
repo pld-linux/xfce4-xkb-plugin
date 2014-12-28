@@ -9,7 +9,7 @@ Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.7/%{name}-
 # Source0-md5:	7fbc3d8c84d6662d819dd1803f0fee34
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	garcon-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	librsvg-devel >= 2.18.0
 BuildRequires:	libwnck-devel >= 2.12.0
 BuildRequires:	libxklavier-devel >= 4.0
