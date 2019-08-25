@@ -1,18 +1,19 @@
 Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.7.1
-Release:	3
+Version:	0.8.1
+Release:	1
 License:	BSD-like
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	2f68e0d53baf68ecc1a7165ad33c26a9
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	72530bf59d7cd902326469e5a7a9892b
+Patch0:		xklavier.patch
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	garcon-devel
 BuildRequires:	gettext-tools
 BuildRequires:	librsvg-devel >= 2.18.0
 BuildRequires:	libwnck-devel >= 2.12.0
-BuildRequires:	libxklavier-devel >= 4.0
+BuildRequires:	libxklavier-devel >= 5.3
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.12.0
 BuildRequires:	xfce4-panel-devel >= 4.12.0
@@ -31,8 +32,14 @@ przedstawiającą flagę narodową.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-static
 
@@ -54,6 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-xkb-plugin
-%{_datadir}/xfce4/panel-plugins/xkb-plugin.desktop
+%attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libxkb.so
+%{_datadir}/xfce4/panel/plugins/xkb.desktop
 %{_datadir}/xfce4/xkb
