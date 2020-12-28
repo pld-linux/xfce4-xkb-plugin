@@ -1,13 +1,12 @@
 Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.8.1
+Version:	0.8.2
 Release:	1
 License:	BSD-like
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	72530bf59d7cd902326469e5a7a9892b
-Patch0:		xklavier.patch
+# Source0-md5:	8e10f98a44082a2df6a997caab9a0b21
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	garcon-devel
 BuildRequires:	gettext-tools
@@ -32,7 +31,6 @@ przedstawiającą flagę narodową.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -51,7 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ur_PK,uz@Latn}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hy_AM,hye,ie,ur_PK,uz@Latn}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libxkb.la
 
 %find_lang %{name}
 
