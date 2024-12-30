@@ -1,22 +1,28 @@
 Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.8.3
+Version:	0.8.5
 Release:	1
 License:	BSD-like
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	16ed2f9fdd7107383a209625f616d398
-URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
-BuildRequires:	garcon-devel
+Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	17f57a110c5f08532c33729e603fca98
+URL:		https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+BuildRequires:	garcon-devel >= 4.16.0
 BuildRequires:	gettext-tools
-BuildRequires:	librsvg-devel >= 2.18.0
-BuildRequires:	libwnck-devel >= 2.12.0
+BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	gtk+3-devel >= 3.22.0
+BuildRequires:	libnotify-devel >= 0.7.0
+BuildRequires:	librsvg-devel >= 2.40.0
+BuildRequires:	libwnck-devel >= 3.14.0
+BuildRequires:	libxfce4ui-devel >= 4.16.0
+BuildRequires:	libxfce4util-devel >= 4.16.0
 BuildRequires:	libxklavier-devel >= 5.3
 BuildRequires:	pkgconfig
-BuildRequires:	xfce4-dev-tools >= 4.12.0
-BuildRequires:	xfce4-panel-devel >= 4.12.0
-Requires:	xfce4-panel >= 4.12.0
+BuildRequires:	xfce4-dev-tools >= 4.16.0
+BuildRequires:	xfce4-panel-devel >= 4.16.0
+BuildRequires:	xfconf-devel >= 4.16.0
+Requires:	xfce4-panel >= 4.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
