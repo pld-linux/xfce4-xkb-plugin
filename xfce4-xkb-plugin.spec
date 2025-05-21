@@ -1,12 +1,12 @@
 Summary:	Displays and switched the current keyboard layout
 Summary(pl.UTF-8):	Wyświetlanie i przełączanie bieżącego układu klawiatury
 Name:		xfce4-xkb-plugin
-Version:	0.8.5
+Version:	0.9.0
 Release:	1
 License:	BSD-like
 Group:		X11/Applications
-Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	17f57a110c5f08532c33729e603fca98
+Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-xkb-plugin/0.9/%{name}-%{version}.tar.xz
+# Source0-md5:	3073f4b25ef2df34451ef6019e04b691
 URL:		https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
 BuildRequires:	garcon-devel >= 4.16.0
 BuildRequires:	gettext-tools
@@ -18,6 +18,8 @@ BuildRequires:	libwnck-devel >= 3.14.0
 BuildRequires:	libxfce4ui-devel >= 4.16.0
 BuildRequires:	libxfce4util-devel >= 4.16.0
 BuildRequires:	libxklavier-devel >= 5.3
+BuildRequires:	meson >= 0.54.0
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.16.0
 BuildRequires:	xfce4-panel-devel >= 4.16.0
@@ -39,24 +41,16 @@ przedstawiającą flagę narodową.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-static
-
-%{__make}
+%meson
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%meson_install
 
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hy_AM,hye,ie,ur_PK,uz@Latn}
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libxkb.la
+#%{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libxkb.la
 
 %find_lang %{name}
 
@@ -65,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog COPYING
+%doc AUTHORS NEWS COPYING
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libxkb.so
 %{_datadir}/xfce4/panel/plugins/xkb.desktop
 %{_datadir}/xfce4/xkb
